@@ -1,6 +1,6 @@
 # SalesPilot CRM
 
-A complete static CRM demo app with working browser-based login, role-based access, sales pipeline, contacts, deals, tasks, subscriptions, invoices, support tickets, users, reports, and settings.
+A browser-local CRM demo with role-specific access, sales pipelines, customer history, follow-ups, itemized invoice PDFs, payment records, support conversations, reminder drafts and data import/export. See [AUDIT.md](AUDIT.md) for implemented features and the planned Cloudflare backend.
 
 ## Demo Logins
 
@@ -17,10 +17,15 @@ This demo stores data in the browser with `localStorage`. Replace the local auth
 
 ```bash
 npm test
+npm run test:browser
 npm run dev
 ```
 
 Then open `http://127.0.0.1:8787`.
+
+Run `npm ci` to install development dependencies. PDF, CSV and icon libraries are pinned and checked into `vendor/` so the published demo does not need npm or an external JavaScript CDN. After a dependency update, run `npm run vendor` and commit the updated assets. Browser tests use locally installed Microsoft Edge.
+
+Invoices download directly as PDF files. Email/WhatsApp reminders open a prefilled draft in your own messaging app; sending is manual. Scheduled drafts do not send in the background. No Cloudflare account is required for this demo.
 
 ## GitHub Pages
 
