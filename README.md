@@ -24,4 +24,14 @@ Then open `http://127.0.0.1:8787`.
 
 ## GitHub Pages
 
-The included workflow publishes the static site from the repository root to GitHub Pages.
+GitHub Pages publishes from the `gh-pages` branch, using the repository root (`/`).
+In Settings > Pages, select "Deploy from a branch", then `gh-pages` and `/ (root)`.
+
+After committing and testing changes on `main`, publish them with:
+
+```bash
+git push origin main
+git push origin main:gh-pages
+```
+
+Live URL: https://relnoorain2-droid.github.io/modern-sales-crm/
