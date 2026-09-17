@@ -1,0 +1,17 @@
+{
+  "name": "salespilot-crm",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static fully functional CRM demo with local browser storage and demo login roles.",
+  "scripts": {
+    "dev": "python -m http.server 8787",
+    "test": "node -e \"const fs=require('fs'); for (const f of ['index.html','styles.css','app.js']) { if (!fs.existsSync(f)) throw new Error(f+' missing'); } const html=fs.readFileSync('index.html','utf8'); if (!html.includes('app.js') || !html.includes('styles.css')) throw new Error('index assets missing'); console.log('CRM static checks passed');\""
+  },
+  "keywords": [
+    "crm",
+    "sales",
+    "pipeline",
+    "dashboard"
+  ],
+  "license": "MIT"
+}
